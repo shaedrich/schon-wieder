@@ -22,7 +22,7 @@ if (process.argv[2] === 'dev') {
 }
 
 function build(): { alt: string, neu: string, html: string } {
-	let content = readFileSync('../template/text.html', 'utf8');
+	let content = readFileSync('../template/de.html', 'utf8');
 	let { alt, neu, html } = generateContent(content);
 
 	alt = NodeHtmlMarkdown.translate(alt);
