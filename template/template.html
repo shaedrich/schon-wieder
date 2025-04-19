@@ -1,49 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="de">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-		<title>Schon wieder - Der Aufstieg der NSDAP/AfD</title>
 
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Schon wieder" />
-		<meta property="og:description" content="Der Aufstieg der NSDAP/AfD" />
-		<meta property="og:image" content="preview.webp" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<title>Schon wieder - Der Aufstieg der NSDAP/AfD</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
 
-		<meta name="twitter:title" content="Schon wieder" />
-		<meta name="twitter:description" content="Der Aufstieg der NSDAP/AfD" />
-		<meta name="twitter:image" content="preview.webp" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<style>
-			/*style*/
-		</style>
-		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				const spans = Array.from(document.querySelectorAll('.content span'));
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Schon wieder" />
+	<meta property="og:description" content="Der Aufstieg der NSDAP/AfD" />
+	<meta property="og:image" content="preview.png" />
 
-				function update() {
-					let y0 = window.innerHeight / 2;
-					spans.forEach((span) => {
-						let rect = span.getBoundingClientRect();
-						if (rect.top + rect.height / 2 < y0) {
-							span.classList.add('neu');
-						} else {
-							span.classList.remove('neu');
-						}
-					});
-				}
+	<meta name="twitter:title" content="Schon wieder" />
+	<meta name="twitter:description" content="Der Aufstieg der NSDAP/AfD" />
+	<meta name="twitter:image" content="preview.webp" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<style>
+		/*style*/
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const spans = Array.from(document.querySelectorAll('.content span'));
 
-				update();
-				window.addEventListener('scroll', update);
-			});
-		</script>
-	</head>
+			function update() {
+				let y0 = window.innerHeight / 2;
+				spans.forEach((span) => {
+					let rect = span.getBoundingClientRect();
+					if (rect.top + rect.height / 2 < y0) {
+						span.classList.add('neu');
+					} else {
+						span.classList.remove('neu');
+					}
+				});
+			}
 
-	<body>
-		<div class="white"></div>
-		<div class="content">
-			<!--content-->
-		</div>
-	</body>
+			update();
+			window.addEventListener('scroll', update);
+		});
+	</script>
+</head>
+
+<body>
+	<div class="white"></div>
+	<div class="content">
+		<!--content-->
+	</div>
+	<footer style="text-align: right; font-size: 0.8rem">
+		<a href="https://datajournal.org/impressum.html" style="color: #0006 !important">Impressum</a>
+	</footer>
+</body>
+
 </html>
