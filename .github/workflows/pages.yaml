@@ -27,25 +27,8 @@ jobs:
          - name: Build the project
            run: npm run build
 
-         - name: Upload Artifact
-           uses: actions/upload-pages-artifact@v3
-           with:
-              path: ./docs
-
-   deploy:
-      name: Deploy to GitHub Pages
-      needs: build
-
-      permissions:
-         pages: write
-         id-token: write
-
-      environment:
-         name: github-pages
-         url: ${{ steps.deployment.outputs.page_url }}
-
-      runs-on: ubuntu-latest
-      steps:
-         - name: Deploy to GitHub Pages
-           id: deployment
-           uses: actions/deploy-pages@v4
+         - name: Release
+           run: |
+              tar -cf - -C docs docs | zstd -9 > release.tar.zst
+              DATE=$(date +%Y-%m-%d)
+              gh release create "r${DATE}" --title "Release ${DATE}" --latest release.tar.zst
